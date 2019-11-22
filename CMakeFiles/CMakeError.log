@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_35387/fast 
+/opt/rh/devtoolset-6/root/usr/bin/gmake -f CMakeFiles/cmTC_35387.dir/build.make CMakeFiles/cmTC_35387.dir/build
+gmake[1]: Entering directory '/home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_35387.dir/CheckSymbolExists.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc    -o CMakeFiles/cmTC_35387.dir/CheckSymbolExists.c.o   -c /home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_35387
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_35387.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc      -rdynamic CMakeFiles/cmTC_35387.dir/CheckSymbolExists.c.o  -o cmTC_35387 
+CMakeFiles/cmTC_35387.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_35387.dir/build.make:86: recipe for target 'cmTC_35387' failed
+gmake[1]: *** [cmTC_35387] Error 1
+gmake[1]: Leaving directory '/home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_35387/fast' failed
+gmake: *** [cmTC_35387/fast] Error 2
+
+File /home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_897bc/fast 
+/opt/rh/devtoolset-6/root/usr/bin/gmake -f CMakeFiles/cmTC_897bc.dir/build.make CMakeFiles/cmTC_897bc.dir/build
+gmake[1]: Entering directory '/home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_897bc.dir/CheckFunctionExists.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_897bc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_897bc
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_897bc.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_897bc.dir/CheckFunctionExists.c.o  -o cmTC_897bc -lpthreads 
+/opt/rh/devtoolset-6/root/usr/libexec/gcc/x86_64-redhat-linux/6.3.1/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_897bc.dir/build.make:86: recipe for target 'cmTC_897bc' failed
+gmake[1]: *** [cmTC_897bc] Error 1
+gmake[1]: Leaving directory '/home/csmajs/wlou901/lab-07-factory-pattern-new_lab7/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_897bc/fast' failed
+gmake: *** [cmTC_897bc/fast] Error 2
+
+
